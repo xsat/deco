@@ -6,8 +6,8 @@
 class Item
 {
 private:
-    int x, y;
-    unsigned int width, height;
+    sf::Vector2i cordinates;
+    sf::Vector2u size;
     bool obstacleStatus;
 public:
     Item();

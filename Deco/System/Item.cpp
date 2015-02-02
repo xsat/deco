@@ -1,10 +1,10 @@
 #include "Item.h"
 
-Item::Item() : x(0), y(0), width(0), height(0), obstacleStatus(false)
+Item::Item() : cordinates(0, 0), size(0,0), obstacleStatus(false)
 {
 }
 
-Item::Item(int _x, int _y, unsigned int _width, unsigned int _height) : x(_x), y(_y), width(_width), height(_height), obstacleStatus(false)
+Item::Item(int _x, int _y, unsigned int _width, unsigned int _height) : cordinates(_x, _y), size(_width, _height), obstacleStatus(false)
 {
 
 }
@@ -19,42 +19,42 @@ void Item::draw(sf::RenderWindow &_window)
 
 void Item::setX(int _x)
 {
-    x = _x;
+    cordinates.x = _x;
 }
 
 void Item::setY(int _y)
 {
-    y = _y;
+    cordinates.y = _y;
 }
 
 void Item::setWidth(unsigned int _width)
 {
-    width = _width;
+    size.x = _width;
 }
 
 void Item::setHeight(unsigned int _height)
 {
-    height = _height;
+    size.y = _height;
 }
 
 int Item::getX() const
 {
-    return x;
+    return cordinates.x;
 }
 
 int Item::getY() const
 {
-    return y;
+    return cordinates.y;
 }
 
 unsigned int Item::getWidth() const
 {
-    return width;
+    return size.x;
 }
 
 unsigned int Item::getHeight() const
 {
-    return height;
+    return size.y;
 }
 
 bool Item::isIn(const Item * _item) const
@@ -69,10 +69,6 @@ bool Item::isIn(const std::shared_ptr<Item> &_item) const
 
 void Item::show() const
 {
-    std::cout << "x = " << x << std::endl;
-    std::cout << "y = " << y << std::endl;
-    std::cout << "width = " << width << std::endl;
-    std::cout << "height = " << height << std::endl << std::endl;
 }
 
 void Item::setMove(int _x, int _y)
