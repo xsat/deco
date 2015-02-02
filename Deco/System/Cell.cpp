@@ -21,7 +21,7 @@ void Cell::show() const
     Item::show();
 
     if (items.size() > 0)
-        std::cout << "-----------" << std::endl;
+        std::cout << "------------" << std::endl;
 
     for (auto item : items)
         item->show();

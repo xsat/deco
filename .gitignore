@@ -3,3 +3,5 @@
 *.suo
 *.opensdf
 Deco/Release/*
+Release/*.pdb
+Release/*.exe

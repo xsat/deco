@@ -1,12 +1,18 @@
-﻿Build started 02.02.2015 22:28:39.
+﻿Build started 02.02.2015 22:58:57.
      1>Project "C:\PuniKi\Visual Studio\Deco\Deco\Deco.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.1x32\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Levels\Level1.cpp Levels\Level2.cpp Main.cpp System\Engine.cpp System\Grid.cpp System\Level.cpp System\Levels.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.1x32\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Blocks\AnimatedBlock.cpp Blocks\MovedBlock.cpp Blocks\ObstacleBlock.cpp Levels\Level1.cpp Levels\Level2.cpp Main.cpp System\Block.cpp System\Cell.cpp System\Engine.cpp System\Grid.cpp System\Item.cpp System\Level.cpp System\Levels.cpp
+         AnimatedBlock.cpp
+         MovedBlock.cpp
+         ObstacleBlock.cpp
          Level1.cpp
          Level2.cpp
          Main.cpp
+         Block.cpp
+         Cell.cpp
          Engine.cpp
          Grid.cpp
+         Item.cpp
          Level.cpp
          Levels.cpp
        Link:
@@ -33,4 +39,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.95
+Time Elapsed 00:00:12.27
