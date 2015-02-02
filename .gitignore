@@ -1,4 +1,5 @@
 *.sdf
 *.sln
 *.suo
+*.opensdf
 Deco/Release/
