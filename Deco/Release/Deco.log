@@ -1,8 +1,14 @@
-﻿Build started 02.02.2015 22:10:53.
+﻿Build started 02.02.2015 22:28:39.
      1>Project "C:\PuniKi\Visual Studio\Deco\Deco\Deco.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.1x32\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt System\Item.cpp
-         Item.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SFML-2.1x32\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Levels\Level1.cpp Levels\Level2.cpp Main.cpp System\Engine.cpp System\Grid.cpp System\Level.cpp System\Levels.cpp
+         Level1.cpp
+         Level2.cpp
+         Main.cpp
+         Engine.cpp
+         Grid.cpp
+         Level.cpp
+         Levels.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\PuniKi\Visual Studio\Deco\Release\Deco.exe" /NOLOGO /LIBPATH:"C:\SFML-2.1x32\lib" "sfml-system.lib" "sfml-graphics.lib" "sfml-window.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\PuniKi\Visual Studio\Deco\Release\Deco.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\PuniKi\Visual Studio\Deco\Release\Deco.lib" /MACHINE:X86 /SAFESEH Release\AnimatedMovedBlock.obj
          Release\AnimatedBlock.obj
@@ -27,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.19
+Time Elapsed 00:00:07.95

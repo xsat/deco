@@ -5,12 +5,11 @@
 class Grid
 {
 private:
+    sf::Vector2i cordinates;
     std::vector<std::shared_ptr<Cell>> cells;
     std::vector<std::shared_ptr<Item>> items;
     std::map<unsigned int, std::shared_ptr<Item>> idItems;
     void addID(unsigned int _id, std::shared_ptr<Item> &_item);
-    int x;
-    int y;
 public:
     Grid();
     ~Grid();

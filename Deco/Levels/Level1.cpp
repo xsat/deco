@@ -15,7 +15,7 @@ void Level1::default()
     grid.addCell(std::shared_ptr<Cell>(new Cell(500, 0, 500, 500)));
     grid.addCell(std::shared_ptr<Cell>(new Cell(500, 500, 500, 500)));
 
-    grid.addItem(std::shared_ptr<Block>(new Block("grass.png", sf::IntRect(0, 0, width, height), 0, 0)));
+    grid.addItem(std::shared_ptr<Block>(new Block("grass.png", sf::IntRect(0, 0, getWidth(), getHeight()), 0, 0)));
 
     grid.addItem(std::shared_ptr<Block>(new Block("house.png", sf::IntRect(0, 0, 100, 120), 300, 244)));
     grid.addItem(std::shared_ptr<Block>(new Block("house.png", sf::IntRect(0, 0, 100, 120), 500, 150)));
