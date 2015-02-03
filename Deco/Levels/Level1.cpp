@@ -28,6 +28,8 @@ void Level1::default()
     grid.addItem(std::shared_ptr<Block>(new Block("tree.png", sf::IntRect(0, 0, 70, 100), 383, 28)));
     grid.addItem(std::shared_ptr<Block>(new Block("tree.png", sf::IntRect(0, 0, 70, 100), 429, 69)));
 
+    grid.addItem(std::shared_ptr<ObstacleBlock>(new ObstacleBlock("stone.png", sf::IntRect(0, 0, 50, 50), 70, 70)));
+
     grid.addItem(1, std::shared_ptr<MovedBlock>(new MovedBlock("stone_move.png", sf::IntRect(0, 0, 50, 50), 10, 10)));
     grid.addItem(2, std::shared_ptr<MovedBlock>(new MovedBlock("stone_move.png", sf::IntRect(0, 0, 50, 50), 10, 500)));
 }

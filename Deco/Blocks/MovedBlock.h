@@ -15,6 +15,7 @@ public:
     ~MovedBlock();
     virtual bool isMove() const;
     virtual void setMove(int _x, int _y);
+    virtual void setMove(bool _status);
     virtual void draw(sf::RenderWindow &_window);
     virtual bool isMovedItem() const;
 };

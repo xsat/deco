@@ -2,6 +2,7 @@
 #include "../System/Level.h"
 #include "../System/Levels.h"
 #include "../Blocks/MovedBlock.h"
+#include "../Blocks/ObstacleBlock.h"
 
 class Level1 : public Level
 {

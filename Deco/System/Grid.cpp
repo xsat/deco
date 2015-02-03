@@ -71,8 +71,13 @@ void Grid::draw(sf::RenderWindow &_window)
     for (auto &ceil : cells)
         ceil->draw(_window);
 
-    for (auto &movedItem : movedItems)
+    for (auto &movedItem : movedItems) {
+        for (auto &ceil : cells)
+            if (ceil->isIn(movedItem))
+                movedItem->setMove(false);
+
         movedItem->draw(_window);
+    }
 }
 
 void Grid::clear()

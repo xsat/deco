@@ -15,5 +15,6 @@ public:
     void show() const;
     virtual void draw(sf::RenderWindow &_window);
     bool isMove() const;
+    bool isInObstacle(const std::shared_ptr<Item> &_item) const;
 };
 

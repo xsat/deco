@@ -77,6 +77,10 @@ void Item::setMove(int _x, int _y)
     setY(_y);
 }
 
+void Item::setMove(bool _status)
+{
+}
+
 bool Item::isObstacle() const
 {
     return false;

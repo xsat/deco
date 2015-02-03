@@ -25,6 +25,7 @@ public:
     void show() const;
     virtual void draw(sf::RenderWindow &_window) = 0;
     virtual void setMove(int _x, int _y);
+    virtual void setMove(bool _status);
     virtual bool isObstacle() const;
     virtual bool isMove() const;
     virtual bool isMovedItem() const;

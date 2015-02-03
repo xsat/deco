@@ -30,6 +30,11 @@ void MovedBlock::setMove(int _x, int _y)
     moveStatus = true;
 }
 
+void MovedBlock::setMove(bool _status)
+{
+    moveStatus = _status;
+}
+
 void MovedBlock::move()
 {
     if (clock.getElapsedTime().asMicroseconds() >= speed && isMove()) {
