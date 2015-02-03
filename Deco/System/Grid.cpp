@@ -1,6 +1,6 @@
 #include "Grid.h"
 
-Grid::Grid() : cordinates(0, 0), cells(), items(), idItems()
+Grid::Grid() : cordinates(0, 0), cells(), items(), movedItems(), idItems()
 {
 }
 
@@ -15,11 +15,22 @@ void Grid::addCell(std::shared_ptr<Cell> &_cell)
 
 void Grid::addItem(std::shared_ptr<Item> _item)
 {
-    for (auto &ceil : cells)
-        if (_item->isIn(ceil))
-            ceil->addItem(_item);
+    if (_item->isMovedItem())
+        addMovedItem(_item);
+    else {
+        bool isInCell = false;
 
-    items.emplace_back(_item);
+        for (auto &ceil : cells)
+            if (_item->isIn(ceil)) {
+                if (!isInCell)
+                    isInCell = true;
+
+                ceil->addItem(_item);
+            }
+
+        if (!isInCell)
+            items.emplace_back(_item);
+    }
 }
 
 void Grid::addItem(unsigned int _id, std::shared_ptr<Item> _item)
@@ -38,6 +49,14 @@ void Grid::addID(unsigned int _id, std::shared_ptr<Item> &_item)
     idItems.insert(std::pair<unsigned int, std::shared_ptr<Item>>(_id, _item));
 }
 
+void Grid::addMovedItem(std::shared_ptr<Item> &_item)
+{
+    if (_item->isMovedItem())
+        movedItems.emplace_back(_item);
+    else
+        addItem(_item);
+}
+
 void Grid::show() const
 {
     for (auto &ceil : cells)
@@ -46,11 +65,14 @@ void Grid::show() const
 
 void Grid::draw(sf::RenderWindow &_window)
 {
+    for (auto &item : items)
+        item->draw(_window);
+
     for (auto &ceil : cells)
         ceil->draw(_window);
 
-    for (auto &item : items)
-        item->draw(_window);
+    for (auto &movedItem : movedItems)
+        movedItem->draw(_window);
 }
 
 void Grid::clear()

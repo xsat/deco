@@ -8,7 +8,6 @@ class Item
 private:
     sf::Vector2i cordinates;
     sf::Vector2u size;
-    bool obstacleStatus;
 public:
     Item();
     Item(int _x, int _y, unsigned int _width, unsigned int _height);
@@ -26,7 +25,8 @@ public:
     void show() const;
     virtual void draw(sf::RenderWindow &_window) = 0;
     virtual void setMove(int _x, int _y);
-    bool isObstacle() const;
-    void setObstacle(bool status);
+    virtual bool isObstacle() const;
+    virtual bool isMove() const;
+    virtual bool isMovedItem() const;
 };
 

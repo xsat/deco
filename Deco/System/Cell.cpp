@@ -11,6 +11,7 @@ Cell::Cell(int _x, int _y, unsigned int _width, unsigned int _height) : Item(_x,
 void Cell::addItem(std::shared_ptr<Item> &_item)
 {
     items.emplace_back(_item);
+
     if (_item->isObstacle())
         obstacleItems.emplace_back(_item);
 }
@@ -21,7 +22,7 @@ void Cell::show() const
     Item::show();
 
     if (items.size() > 0)
-        std::cout << "------------" << std::endl;
+        std::cout << "-----------" << std::endl;
 
     for (auto item : items)
         item->show();
@@ -31,6 +32,14 @@ void Cell::show() const
 
 void Cell::draw(sf::RenderWindow &_window)
 {
-    for (auto item : items)
+    for (auto &item : items)
         item->draw(_window);
+}
+
+bool Cell::isMove() const
+{
+    for (auto item : items)
+        if (item->isMove())
+            return true;
+    return false;
 }

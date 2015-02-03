@@ -1,10 +1,10 @@
 #include "Item.h"
 
-Item::Item() : cordinates(0, 0), size(0,0), obstacleStatus(false)
+Item::Item() : cordinates(0, 0), size(0,0)
 {
 }
 
-Item::Item(int _x, int _y, unsigned int _width, unsigned int _height) : cordinates(_x, _y), size(_width, _height), obstacleStatus(false)
+Item::Item(int _x, int _y, unsigned int _width, unsigned int _height) : cordinates(_x, _y), size(_width, _height)
 {
 
 }
@@ -79,9 +79,15 @@ void Item::setMove(int _x, int _y)
 
 bool Item::isObstacle() const
 {
-    return obstacleStatus;
+    return false;
 }
-void Item::setObstacle(bool status)
+
+bool Item::isMove() const
 {
-    obstacleStatus = status;
+    return false;
+}
+
+bool Item::isMovedItem() const
+{
+    return false;
 }

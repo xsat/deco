@@ -62,3 +62,7 @@ void MovedBlock::draw(sf::RenderWindow &_window)
     Block::draw(_window);
 }
 
+bool MovedBlock::isMovedItem() const
+{
+    return true;
+}

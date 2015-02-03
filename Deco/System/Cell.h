@@ -14,5 +14,6 @@ public:
     void Cell::addItem(std::shared_ptr<Item> &_item);
     void show() const;
     virtual void draw(sf::RenderWindow &_window);
+    bool isMove() const;
 };
 
