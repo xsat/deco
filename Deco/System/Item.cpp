@@ -59,12 +59,21 @@ unsigned int Item::getHeight() const
 
 bool Item::isIn(const Item * _item) const
 {
-    return (getX() >= _item->getX() && getX() + getWidth() <= _item->getX() + _item->getWidth()) || (getY() >= _item->getY() && getY() + getHeight() <= _item->getY() + _item->getHeight());
+    return (getX() >= _item->getX() && getX() + getWidth() <= _item->getX() + _item->getWidth()) && (getY() >= _item->getY() && getY() + getHeight() <= _item->getY() + _item->getHeight());
 }
 
 bool Item::isIn(const std::shared_ptr<Item> &_item) const
 {
-    return (getX() >= _item->getX() && getX() + getWidth() <= _item->getX() + _item->getWidth()) || (getY() >= _item->getY() && getY() + getHeight() <= _item->getY() + _item->getHeight());
+    return (getX() >= _item->getX() && getX() + getWidth() <= _item->getX() + _item->getWidth()) && (getY() >= _item->getY() && getY() + getHeight() <= _item->getY() + _item->getHeight());
+}
+
+bool Item::isNear(const std::shared_ptr<Item> &_item)  const
+{
+    return ((getX() + _item->getWidth()) >= _item->getX()) && 
+        (getX() <= (_item->getX() + _item->getWidth())) && 
+        ((getY() + _item->getHeight()) >= _item->getY()) && 
+        (getY() <= (_item->getY() + _item->getHeight()));
+    //////warning C4018:
 }
 
 void Item::show() const

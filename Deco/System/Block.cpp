@@ -55,3 +55,14 @@ const sf::FloatRect &Block::getFloatRect() const
 {
     return sprite.getGlobalBounds();
 }
+
+int Block::getX() const
+{
+    return static_cast<int>(sprite.getPosition().x);
+}
+
+int Block::getY() const
+{
+    return static_cast<int>(sprite.getPosition().y);
+}
+

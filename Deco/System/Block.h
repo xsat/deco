@@ -19,5 +19,7 @@ public:
     virtual void setRect(const sf::IntRect &_intRect);
     virtual void draw(sf::RenderWindow &_window);
     const sf::FloatRect &getFloatRect() const;
+    virtual int getX() const;
+    virtual int getY() const;
 };
 

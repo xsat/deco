@@ -32,7 +32,7 @@ void Engine::callEvents()
 
     levels.callEvent();
 
-    if (event.type == sf::Event::MouseMoved) {
+    /*if (event.type == sf::Event::MouseMoved) {
         if (!isMoveTop && event.mouseMove.y >= 0 && event.mouseMove.y <= 20) {
             isMoveTop = true;
         } else if (isMoveTop) {
@@ -56,7 +56,7 @@ void Engine::callEvents()
         } else if (isMoveLeft) {
             isMoveLeft = false;
         }
-    }
+    }*/
 
     /*if (event.type == sf::Event::MouseWheelMoved) {
         float factor;

@@ -68,15 +68,19 @@ void Grid::draw(sf::RenderWindow &_window)
     for (auto &item : items)
         item->draw(_window);
 
-    for (auto &ceil : cells)
+    for (auto &movedItem : movedItems)
+        movedItem->draw(_window);
+
+    for (auto &ceil : cells) {
+        for (auto &movedItem : movedItems) {
+            if (movedItem->isMove() && ceil->isInObstacle(movedItem)) {
+                movedItem->setMove(false);
+                std::cout << "-";
+            }
+        }
+
         ceil->draw(_window);
 
-    for (auto &movedItem : movedItems) {
-        for (auto &ceil : cells)
-            if (ceil->isIn(movedItem))
-                movedItem->setMove(false);
-
-        movedItem->draw(_window);
     }
 }
 

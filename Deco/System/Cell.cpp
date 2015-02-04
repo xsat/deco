@@ -10,10 +10,11 @@ Cell::Cell(int _x, int _y, unsigned int _width, unsigned int _height) : Item(_x,
 
 void Cell::addItem(std::shared_ptr<Item> &_item)
 {
-    items.emplace_back(_item);
-
     if (_item->isObstacle())
         obstacleItems.emplace_back(_item);
+    else
+        items.emplace_back(_item);
+
 }
 
 void Cell::show() const 
@@ -34,6 +35,8 @@ void Cell::draw(sf::RenderWindow &_window)
 {
     for (auto &item : items)
         item->draw(_window);
+    for (auto &obstacleItem : obstacleItems)
+        obstacleItem->draw(_window);
 }
 
 bool Cell::isMove() const
@@ -46,8 +49,9 @@ bool Cell::isMove() const
 
 bool Cell::isInObstacle(const std::shared_ptr<Item> &_item) const
 {
-    for (auto &obstacleItem : obstacleItems)
-        if (obstacleItem->isIn(_item))
-                return true;
+    for (auto &obstacleItem : obstacleItems) {
+        if (obstacleItem->isNear(_item))
+            return true;
+    }
     return false;
 }
