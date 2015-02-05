@@ -81,7 +81,7 @@ bool MovedBlock::isMovedItem() const
     return true;
 }
 
-bool MovedBlock::isNear(const std::shared_ptr<Item> &_item) const;
+bool MovedBlock::isNear(const std::shared_ptr<Item> &_item) const
 {
     bool nearStatus = tempCordinates.x + getWidth() > _item->getX() &&
         tempCordinates.x < _item->getX() + _item->getWidth() &&
