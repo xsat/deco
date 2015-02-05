@@ -71,17 +71,25 @@ void Grid::draw(sf::RenderWindow &_window)
     for (auto &movedItem : movedItems)
         movedItem->draw(_window);
 
+    bool isMove = false;
+
     for (auto &ceil : cells) {
         for (auto &movedItem : movedItems) {
             if (movedItem->isMove() && ceil->isInObstacle(movedItem)) {
                 movedItem->setMove(false);
-                std::cout << "-";
             }
+
+            if (!isMove)
+                movedItem->move();
         }
 
+        isMove = true;
         ceil->draw(_window);
-
     }
+
+    if (!isMove)
+        for (auto &movedItem : movedItems)
+            movedItem->move();
 }
 
 void Grid::clear()

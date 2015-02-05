@@ -30,5 +30,6 @@ public:
     virtual bool isObstacle() const;
     virtual bool isMove() const;
     virtual bool isMovedItem() const;
+    virtual void move();
 };
 

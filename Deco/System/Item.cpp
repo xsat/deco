@@ -69,10 +69,7 @@ bool Item::isIn(const std::shared_ptr<Item> &_item) const
 
 bool Item::isNear(const std::shared_ptr<Item> &_item)  const
 {
-    return ((getX() + _item->getWidth()) >= _item->getX()) && 
-        (getX() <= (_item->getX() + _item->getWidth())) && 
-        ((getY() + _item->getHeight()) >= _item->getY()) && 
-        (getY() <= (_item->getY() + _item->getHeight()));
+    return getX() + getWidth() >= _item->getX() && getX() <= _item->getX() + _item->getWidth() && getY() + getHeight() >= _item->getY() && getY() <= _item->getY() + _item->getHeight();
     //////warning C4018:
 }
 
@@ -103,4 +100,8 @@ bool Item::isMove() const
 bool Item::isMovedItem() const
 {
     return false;
+}
+
+void Item::move()
+{
 }

@@ -5,9 +5,14 @@ class MovedBlock : public virtual Block
 {
 private:
     bool moveStatus;
+    bool moveTop;
+    bool moveRight;
+    bool moveBottom;
+    bool moveLeft;
     sf::Clock clock;
-    virtual void move();
     sf::Int64 speed;
+    sf::Vector2i tempCordinates;
+    virtual void moveCordinates();
 public:
     MovedBlock();
     MovedBlock(const std::string &_fileName);
@@ -18,5 +23,7 @@ public:
     virtual void setMove(bool _status);
     virtual void draw(sf::RenderWindow &_window);
     virtual bool isMovedItem() const;
+    virtual bool isNear(const std::shared_ptr<Item> &_item) const;
+    virtual void move();
 };
 

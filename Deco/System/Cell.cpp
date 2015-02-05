@@ -50,7 +50,7 @@ bool Cell::isMove() const
 bool Cell::isInObstacle(const std::shared_ptr<Item> &_item) const
 {
     for (auto &obstacleItem : obstacleItems) {
-        if (obstacleItem->isNear(_item))
+        if (_item->isNear(obstacleItem))
             return true;
     }
     return false;
