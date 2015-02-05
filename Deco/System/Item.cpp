@@ -27,12 +27,12 @@ void Item::setY(int _y)
     cordinates.y = _y;
 }
 
-void Item::setWidth(unsigned int _width)
+void Item::setWidth(int _width)
 {
     size.x = _width;
 }
 
-void Item::setHeight(unsigned int _height)
+void Item::setHeight(int _height)
 {
     size.y = _height;
 }
@@ -47,12 +47,12 @@ int Item::getY() const
     return cordinates.y;
 }
 
-unsigned int Item::getWidth() const
+int Item::getWidth() const
 {
     return size.x;
 }
 
-unsigned int Item::getHeight() const
+int Item::getHeight() const
 {
     return size.y;
 }
@@ -70,7 +70,6 @@ bool Item::isIn(const std::shared_ptr<Item> &_item) const
 bool Item::isNear(const std::shared_ptr<Item> &_item)  const
 {
     return getX() + getWidth() >= _item->getX() && getX() <= _item->getX() + _item->getWidth() && getY() + getHeight() >= _item->getY() && getY() <= _item->getY() + _item->getHeight();
-    //////warning C4018:
 }
 
 void Item::show() const

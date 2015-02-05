@@ -7,19 +7,19 @@ class Item
 {
 private:
     sf::Vector2i cordinates;
-    sf::Vector2u size;
+    sf::Vector2i size;
 public:
     Item();
     Item(int _x, int _y, unsigned int _width, unsigned int _height);
     ~Item();
     virtual void setX(int _x);
     virtual void setY(int _y);
-    virtual void setWidth(unsigned int _width);
-    virtual void setHeight(unsigned int _height);
+    virtual void setWidth(int _width);
+    virtual void setHeight(int _height);
     virtual int getX() const;
     virtual int getY() const;
-    virtual unsigned int getWidth() const;
-    virtual unsigned int getHeight() const;
+    virtual int getWidth() const;
+    virtual int getHeight() const;
     virtual bool isIn(const Item * _item) const;
     virtual bool isIn(const std::shared_ptr<Item> &_item) const;
     virtual bool isNear(const std::shared_ptr<Item> &_item) const;
